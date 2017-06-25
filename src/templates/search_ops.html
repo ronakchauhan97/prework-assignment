@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Search Volunteering Opportunities </title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+	<h1> &emsp; Search volunteering opportunity </h1>
+
+	<p> <br>
+	&emsp; &emsp;	The search implementation is not so user-friendly  <br>
+	&emsp; &emsp;	Enter the field/s by which you want to search for opportunities separated by a <br>
+	&emsp; &emsp;	semi-colon (and optional space/s) in the 1st box. <br><br>
+	&emsp; &emsp;	<b>Following are the valid search fields :</b> <i>title, location, availability </i> <br> <br>
+
+	&emsp; &emsp;	Enter the terms for those fields in the <b>respective order of the fields</b>,
+	separated by a <br>
+	&emsp; &emsp;	semi-colon (and optional space/s) in the 2nd box. <br> <br>
+
+	&emsp; &emsp;	Consider the following example. <br>
+	&emsp; &emsp; &emsp;	enter (<i> title; location </i>) in the first search box <br>
+	&emsp; &emsp; &emsp; 	enter (<i> intern; mumbai </i>) in the second search box <br> <br>
+
+	&emsp; &emsp;	The above example will show all opportunities with title = intern and location = mumbai <br>
+	&emsp; &emsp;	Note that the search is <b>not case sensitive.</b> <br>
+	&emsp; &emsp;   Also, please <b>donot type ';' before the first or after the last field/search_terms</b> <br>
+	&emsp; &emsp;   as it causes some things to break due to the way text is processed before searching <br> <br>
+
+	</p>
+	<form method = "POST"  action = '/search_results'>
+		<div class = "form-group">
+			<label> <b> &emsp; &emsp; Search Field/s &nbsp; </b> </label>			
+			<input type="text" name="op_fields"><br><br>
+
+			<label> <b> &emsp; &emsp; Search Terms &emsp; </b> </label>
+			<input type="text" name="search_terms"><br><br>
+		</div>
+		
+		<p> &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+		<input class = "btn btn-primary" type="submit" value="Search">
+		
+		<p>
+	</form>
+</html>
