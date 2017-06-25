@@ -20,11 +20,16 @@
 	&emsp; &emsp;	semi-colon (and optional space/s) in the 2nd box. <br> <br>
 
 	&emsp; &emsp;	Consider the following example. <br>
-	&emsp; &emsp; &emsp;	enter (<i> title; location </i>) in the first search box <br>
-	&emsp; &emsp; &emsp; 	enter (<i> intern; mumbai </i>) in the second search box <br> <br>
+	&emsp; &emsp; &emsp;	enter (<i> title; location </i>) in the first search box without the brackets <br>
+	&emsp; &emsp; &emsp; 	enter (<i> intern; mumbai </i>) in the second search box without the brackets <br> <br>
 
 	&emsp; &emsp;	The above example will show all opportunities with title = intern and location = mumbai <br>
-	&emsp; &emsp;	Note that the search is <b>not case sensitive.</b> <br>
+	&emsp; &emsp;	Note that the search is <b>not case sensitive</b>. <br>
+	&emsp; &emsp;   The search uses regular expressions, so <b>partial matches are also shown</b>. <br> <br> 
+	&emsp; &emsp;   Example 1 : For title <i>'Manager'</i>, result will also contain <i>'Communications Manager'</i> if such title <br>
+	&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &ensp; exists in the db. <br>
+	&emsp; &emsp;   Example 2 : Also helps to find location better, for location in <i>(city, state)</i> format, <br>
+	&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &ensp; location can be found by state also) <br> <br>
 	&emsp; &emsp;   Also, please <b>donot type ';' before the first or after the last field/search_terms</b> <br>
 	&emsp; &emsp;   as it causes some things to break due to the way text is processed before searching <br> <br>
 

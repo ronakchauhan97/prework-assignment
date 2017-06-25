@@ -81,7 +81,7 @@ def results_HTML(cursor_obj, found, cursor_count):
 		output_string += '<h1> <center> No opportunity matched your search query :( </center> </h1> <hr>'
 
 	else :
-		output_string += '<h1> <center> Following Opportunities matched your search query </center> </h1> <hr> <p>'	 
+		output_string += '<h1> <center> Following opportunities matched your search query </center> </h1> <hr> <p>'	 
 		for opportunity in cursor_obj:
 			output_string += '<b> &emsp; &emsp; &emsp; &emsp; Title : </b> ' + ' -- ' + opportunity['op_title'] + '  <br><br>	'
 			output_string += '<b> &emsp; &emsp; &emsp; &emsp; Description : </b> ' + ' -- ' + opportunity['op_desc'] + '  <br><br>'
@@ -124,20 +124,20 @@ def search_results():
 
 			search_terms[i] = (search_terms[i][s:e+1]).title()
 
-		# #search_fields and #search_terms to be the same
+		# #search_fields and #search_terms need to be the same
 		if(len(field_list) != len(search_terms)) :
 			return render_template('error.html', parameter=1)
-		
+
 		final_search_term = dict()
 		for i in range(len(field_list)):
 			if field_list[i] == 'Title':
-				final_search_term['op_title'] = search_terms[i]	
+				final_search_term['op_title'] = { '$regex' : '.*' + search_terms[i] + '.*'}
 
 			elif field_list[i] == 'Location':
-				final_search_term['op_loc'] = search_terms[i]
+				final_search_term['op_loc'] = { '$regex' : '.*' + search_terms[i] + '.*'}
 				
-			elif field_list[i] == 'Availability':
-				final_search_term['op_avail'] = search_terms[i]
+			elif field_list[i] == 'Availability': 
+				final_search_term['op_avail'] = { '$regex' : '.*' + search_terms[i] + '.*'}
 
 
 		op_collection = mongo.db.opportunities
