@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Error </title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	{% if parameter == 0 %}
+		<!-- If any form is not filled completely filled -->
+		<h1> <center> Error : Please fill all input boxes </center> </h1>
+	{% elif parameter == 1 %}
+		<h1> <center> Error : Number of entries in both inputs are not the same </center> </h1>
+	{% else  %}
+		<!-- This is general error -->
+		<h1> <center> Error : Sorry, some error occured :( </center> </h1>
+	{% endif %}
+
+	<hr>
+
+</body>
+</html>
